@@ -32,7 +32,7 @@ const store = (function (){
   function findAndUpdateName(id, newName){
     try{
       Item.validateName(newName);
-      Item.findById(id).name = newName;
+      this.findById(id).name = newName;
     }catch(e){
       console.log(`Cannot update Item name: ${e.message}`);
     }
