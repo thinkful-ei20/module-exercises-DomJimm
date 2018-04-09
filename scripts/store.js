@@ -42,8 +42,16 @@ const store = (function (){
     items.splice(items.findIndex(item => item.id = this.findById(id).id), 1);
   }
 
+  function toggleCheckedFilter() {
+    this.hideCheckedItems = !this.hideCheckedItems;
+  }
+
+  function setSearchTerm(searchTerm) {
+    this.searchTerm = searchTerm;
+  }
+
   return {
     items, hideCheckedItems, searchTerm, findById, 
-    addItem, findAndToggleChecked, findAndUpdateName, findAndDelete,
+    addItem, findAndToggleChecked, findAndUpdateName, findAndDelete, toggleCheckedFilter, setSearchTerm
   };
 }());
